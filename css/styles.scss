@@ -1,0 +1,84 @@
+@import "colors";
+
+$tablet: "screen and  (min-width: 768px)";
+$computer: "screen and (min-width: 1200px)";
+
+$primary: #FF0;
+$paddingDefault: 20px;
+.padding {
+  padding: $paddingDefault;
+  &Double {
+    padding: $paddingDefault * 2;
+  }
+  &Half {
+    padding: $paddingDefault / 2;
+  }
+}
+
+$side: left;
+$margin: 10px;
+
+@mixin blurText($blur: 5px) {
+  color: transparent;
+  text-shadow: 0 0 $blur rgba(0, 0, 0, 0.5);
+}
+
+.box {
+  background-color: aquamarine;
+  height: 100px;
+
+  @media #{$tablet}{
+    width: 50%;
+  }
+
+  @media #{$computer}{
+    width: 25%;
+  }
+}
+
+.box2 {
+  @extend .box;
+  border-radius: 5px;
+}
+
+body {
+  background-color: $primaryColor;
+  user-select: none;
+  display: grid;
+  font-size: 40pt;
+  @include blurText(20px);
+
+}
+
+nav {
+  background-color: bisque;
+  line-height: 60px;
+  height: 60px;
+}
+
+header {
+  background-color: complement(bisque);
+  height: calc(100vh - 60px);
+
+  .text {
+    color: blue;
+    border: {
+      color: #f0f;
+      style: solid;
+      width: 2px;
+    }
+
+    ul {
+      li {
+        font-size: 20px;
+
+        &:nth-of-type(3) {
+          background-color: aqua;
+
+        }
+      }
+    }
+  }
+}
+
+
