@@ -1,14 +1,9 @@
+@import "colors";
+
+$tablet: "screen and  (min-width: 768px)";
+$computer: "screen and (min-width: 1200px)";
 
 
-
-$red: #F15854;
-$gray: #4D4D4D;
-$blue: #5DA5DA;
-$yellow: #DECF3F;
-$purple: #B276B2;
-$white: #ffffff;
-$aquamarine: #7FFFD4;
-$green: #008000;
 $textDefault: 0 0 1px black;
 $centerAlignText: center;
 $paddingDefault: 20px;
@@ -22,14 +17,14 @@ $paddingDefault: 20px;
   }
 }
 
-$widthDefault: 10px;
+$widthDefault: 100%;
 .width {
   width: $widthDefault;
   &Halv {
-    width: $widthDefault * 5;
+    width: $widthDefault / 5;
   }
   &Hel {
-    width: $widthDefault * 10;
+    width: $widthDefault / 10;
   }
 }
 
@@ -59,7 +54,7 @@ $widthDefault: 10px;
     display: table-row;
      * {
       display: table-cell;
-      border-bottom: 12px solid white;
+      border-bottom: 5px solid $bodyColor;
     }
   }
 }
@@ -75,45 +70,51 @@ $widthDefault: 10px;
   padding-left: 10px;
 }
 
-
-.gray {
-  background: $gray;
-}
-
-.blue {
-  background: $blue;
-}
-
-.yellow {
-  background: $yellow;
-}
-
-.purple {
-  background: $purple;
-}
-
 * {
   box-sizing: border-box;
 }
 
 body {
-  padding: $paddingDefault;
   font-family: sans-serif;
+  background-color: $bodyColor;
+}
+
+nav{
+  background-color: complement($bodyColor);
+  padding: 5px;
+  h2{
+    text-align: $centerAlignText;
+  }
+  ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    li{
+      list-style-type: none;
+    }
+  }
+  a{
+    text-decoration: none;
+    color: $black;
+    cursor: pointer;
+  }
+
+  a:hover{
+    color: $green;
+  }
+
 }
 
 
 .cards{
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+    position: absolute;
+  bottom: 100px;
+  right: 0;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 
-  h4{
-    text-align: $centerAlignText;
-  }
-
-  h5{
+  p{
     text-align: $centerAlignText;
     font-family: "Comic Sans MS", sans-serif;
     font-size: 15pt;
@@ -121,25 +122,42 @@ body {
 
   .card1{
     width: 150px;
-    height: 100px;
+    height: 50px;
     background-color: $yellow;
+    p:nth-child(2){
+      background-color: $gray;
+      color: $white;
+    }
   }
   .card2{
     width: 150px;
-    height: 100px;
+    height: 50px;
     background-color: $gray;
     color: $white;
+    p:nth-child(1){
+      background-color: $gray;
+    }
+    p:nth-child(2){
+      background-color: $gray;
+    }
   }
   .card3{
-    width: 150px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background-color: $purple;
-    color: $white;
+    p:nth-child(2){
+      background-color: $gray;
+      color: $white;
+    }
   }
   .card4{
     width: 150px;
-    height: 100px;
+    height: 50px;
     background-color: $blue;
+    p:nth-child(2){
+      background-color: $gray;
+      color: $white;
+    }
   }
 
 }
