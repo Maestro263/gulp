@@ -1,9 +1,14 @@
+
+
+
 $red: #F15854;
 $gray: #4D4D4D;
 $blue: #5DA5DA;
 $yellow: #DECF3F;
 $purple: #B276B2;
 $white: #ffffff;
+$aquamarine: #7FFFD4;
+$green: #008000;
 $textDefault: 0 0 1px black;
 $centerAlignText: center;
 $paddingDefault: 20px;
@@ -17,7 +22,7 @@ $paddingDefault: 20px;
   }
 }
 
-$widthDefault: 10%;
+$widthDefault: 10px;
 .width {
   width: $widthDefault;
   &Halv {
@@ -36,11 +41,12 @@ $widthDefault: 10%;
           $purple 0 100%
   );
   border-radius: 50%;
-  width: $widthDefault{&Halv};
+  width: 50%;
   height: 0;
   padding-top: 50%;
   float: left;
   padding-right: 20px;
+
 }
 
 .key {
@@ -91,6 +97,51 @@ $widthDefault: 10%;
 }
 
 body {
-  padding: 20px;
+  padding: $paddingDefault;
   font-family: sans-serif;
 }
+
+
+.cards{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: row;
+
+  h4{
+    text-align: $centerAlignText;
+  }
+
+  h5{
+    text-align: $centerAlignText;
+    font-family: "Comic Sans MS", sans-serif;
+    font-size: 15pt;
+  }
+
+  .card1{
+    width: 150px;
+    height: 100px;
+    background-color: $yellow;
+  }
+  .card2{
+    width: 150px;
+    height: 100px;
+    background-color: $gray;
+    color: $white;
+  }
+  .card3{
+    width: 150px;
+    height: 100px;
+    background-color: $purple;
+    color: $white;
+  }
+  .card4{
+    width: 150px;
+    height: 100px;
+    background-color: $blue;
+  }
+
+}
+
+
