@@ -31,10 +31,10 @@
 <nav>
     <h2>Dashboard</h2>
     <ul>
-        <li><a href="#">Omkostninger</a></li>
-        <li><a href="#">Fortjeneste</a></li>
-        <li><a href="#">Salg</a></li>
-        <li><a href="#">Antal besøgere</a></li>
+        <li><a href="#" class="omkostninger">Omkostninger</a></li>
+        <li><a href="#" class="fortjeneste">Fortjeneste</a></li>
+        <li><a href="#" class="salg">Salg</a></li>
+        <li><a href="#" class="antal">Antal besøgere</a></li>
     </ul>
 </nav>
 <br>
@@ -43,19 +43,19 @@
 <ul class="key">
     <li>
         <strong class="percent yellow">30%</strong>
-        <span class="choice">Omkostninger</span>
+        <span class="choice omkostninger">Omkostninger</span>
     </li>
     <li>
         <strong class="percent gray">30%</strong>
-        <span class="choice">Fortjeneste</span>
+        <span class="choice fortjeneste">Fortjeneste</span>
     </li>
     <li>
         <strong class="percent purple">20%</strong>
-        <span class="choice">Salg</span>
+        <span class="choice salg">Salg</span>
     </li>
     <li>
         <strong class="percent blue">20%</strong>
-        <span class="choice">Antal besøgere</span>
+        <span class="choice antal">Antal besøgere</span>
     </li>
 </ul>
 
@@ -77,6 +77,36 @@
         <p class="pris">1.5mil</p>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        $('.omkostninger').click(function(e){
+            $('.card1').css('font-weight','bold');
+            $('.omkostninger').css('font-weight','bold');
+            $('.card4').css('font-weight', 'normal');
+            $('.antal').css('font-weight', 'normal');
+        });
+        $('.fortjeneste').click(function(e){
+            $('.card2').css('font-weight','bold');
+            $('.fortjeneste').css('font-weight','bold');
+            $(".card1").css('font-weight', 'normal');
+            $('.omkostninger').css('font-weight', 'normal');
+        });
+        $('.salg').click(function(e){
+            $('.card3').css('font-weight','bold');
+            $('.salg').css('font-weight','bold');
+            $(".card2").css('font-weight', 'normal');
+            $('.fortjeneste').css('font-weight', 'normal');
+        });
+        $('.antal').click(function(e){
+            $('.card4').css('font-weight','bold');
+            $('.antal').css('font-weight','bold');
+            $(".card3").css('font-weight', 'normal');
+            $('.salg').css('font-weight', 'normal');
+        })
+    });
+
+</script>
 
 </body>
 </html>
